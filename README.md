@@ -13,7 +13,7 @@ npm install peggy-tag
 import peggy from "../lib/index.js";
 
 const parse = peggy`foo = $("f" "o"+)`;
-console.log(parse("foooo")); // "foooo
+console.log(parse("foooo")); // "foooo"
 ```
 
 ## Notes:
@@ -22,4 +22,3 @@ console.log(parse("foooo")); // "foooo
 - Can't be used with `require`.
 - This is for non-performance-sensitive code (e.g. prototypes), because the
   parser with be generated every time the template is evaluated.
-  

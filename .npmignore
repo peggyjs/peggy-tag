@@ -108,3 +108,5 @@ dist
 .eslintrc.cjs
 .vscode/
 test/
+tsconfig.json
+.github/

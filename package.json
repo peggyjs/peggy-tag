@@ -4,10 +4,12 @@
   "description": "Tagged template strings for Peggy grammars",
   "main": "lib/index.js",
   "type": "module",
+  "types": "types/index.d.ts",
   "scripts": {
     "test": "node test/index-spec.js",
     "coverage": "c8 npm test",
-    "lint": "eslint . --ext js"
+    "lint": "eslint . --ext js",
+    "ts": "tsc"
   },
   "repository": {
     "type": "git",
@@ -30,7 +32,8 @@
   },
   "devDependencies": {
     "@peggyjs/eslint-config": "2.0.0",
-    "c8": "7.11.3"
+    "c8": "7.11.3",
+    "typescript": "4.7.3"
   },
   "engines": {
     "node": ">=18.2.0"
