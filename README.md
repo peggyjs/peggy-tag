@@ -24,3 +24,4 @@ console.log(parse("foooo")); // "foooo"
   parser with be generated every time the template is evaluated.
 
 [![Tests](https://github.com/peggyjs/peggy-tag/actions/workflows/node.js.yml/badge.svg)](https://github.com/peggyjs/peggy-tag/actions/workflows/node.js.yml)
+[![codecov](https://codecov.io/gh/peggyjs/peggy-tag/branch/main/graph/badge.svg?token=JCB9G04O47)](https://codecov.io/gh/peggyjs/peggy-tag)
