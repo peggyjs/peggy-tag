@@ -14,6 +14,13 @@ import peggy from "../lib/index.js";
 
 const parse = peggy`foo = $("f" "o"+)`;
 console.log(parse("foooo")); // "foooo"
+
+const trace = peggy.withOptions({ trace: true });
+const traceParse = trace`num = n:$[0-9]+ { return parseInt(n, 10); }`
+console.log(traceParse("123"));
+// 1:1-1:1 rule.enter num
+// 1:1-1:4 rule.match num
+// 123
 ```
 
 ## Notes:
