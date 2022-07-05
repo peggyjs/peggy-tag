@@ -2,6 +2,9 @@ import assert from "node:assert";
 import peggy from "../lib/index.js";
 import test from "node:test";
 
+// Don't syntax-highlight the intentionally-invalid code.
+const bad = peggy;
+
 test("happy path", () => {
   const parser = peggy`foo = "foo"`;
   assert(parser("foo"), "foo");
@@ -9,7 +12,7 @@ test("happy path", () => {
 
 test("bad grammar", () => {
   assert.throws(
-    () => peggy`foo = "foo`,
+    () => bad`foo = "foo`,
     "1 | foo"
   );
 });
