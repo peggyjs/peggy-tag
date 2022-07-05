@@ -24,3 +24,17 @@ test("bad input", () => {
     "1 | bar"
   );
 });
+
+test("with options", () => {
+  const peg = peggy.withOptions({ trace: true });
+  const parser = peg`foo = "3"`;
+  const events = [];
+  parser("3", {
+    tracer: {
+      trace(ev) {
+        events.push(ev);
+      },
+    },
+  });
+  assert(events.length > 0);
+});
