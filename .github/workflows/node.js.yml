@@ -3,34 +3,34 @@ name: Tests
 on:
   push:
     branches:
-      - '*'
+      - 'main'
   pull_request:
-    branches: ['*']
+    branches: ['main']
 
 jobs:
   build:
 
     strategy:
       matrix:
-        node-version: [18.x]
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [18.x, 20.x, 21.x]
+        os: [ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - name: Install dependencies
         run: npm install
       - name: Check coding standards
-        if: matrix.node-version == '18.x' && matrix.os == 'ubuntu-latest'
+        if: matrix.node-version == '21.x' && matrix.os == 'ubuntu-latest'
         run: npm run lint
       - name: Static analysis - check types
-        if: matrix.node-version == '18.x' && matrix.os == 'ubuntu-latest'
+        if: matrix.node-version == '21.x' && matrix.os == 'ubuntu-latest'
         run: npm run ts
       - name: Test
         run: npm run coverage

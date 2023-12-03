@@ -13,7 +13,9 @@ test("happy path", () => {
 test("bad grammar", () => {
   assert.throws(
     () => bad`foo = "foo`,
-    "1 | foo"
+    // The position of the dquote in the line above.  This will change
+    // if the line above moves in the file.
+    /index-spec\.js:15:21\n   \|\n15 \| foo = "foo\n   \|       \^/
   );
 });
 
@@ -21,7 +23,7 @@ test("bad input", () => {
   const parser = peggy`foo = "foo"`;
   assert.throws(
     () => parser("bar"),
-    "1 | bar"
+    /^1 \| bar/m
   );
 });
 
