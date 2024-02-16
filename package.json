@@ -22,6 +22,7 @@
     "template"
   ],
   "author": "Joe Hildebrand <joe-github@cursive.net>",
+  "contributors": ["Kailey Kaes <kaileykaes@gmail.com>"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/peggy/peggy-tag/issues"
