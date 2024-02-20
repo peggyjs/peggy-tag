@@ -8,7 +8,7 @@
   "scripts": {
     "test": "node test/index-spec.js",
     "coverage": "c8 npm test",
-    "lint": "eslint . --ext js",
+    "lint": "eslint .",
     "ts": "tsc"
   },
   "repository": {
@@ -22,17 +22,20 @@
     "template"
   ],
   "author": "Joe Hildebrand <joe-github@cursive.net>",
-  "contributors": ["Kailey Kaes <kaileykaes@gmail.com>"],
+  "contributors": [
+    "Kailey Kaes <kaileykaes@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/peggy/peggy-tag/issues"
   },
   "homepage": "https://github.com/peggy/peggy-tag#readme",
   "dependencies": {
+    "eslint": "^8.56.0",
     "peggy": "4.0.0"
   },
   "devDependencies": {
-    "@peggyjs/eslint-config": "3.2.2",
+    "@peggyjs/eslint-config": "4.0.0",
     "@types/node": "20.11.19",
     "c8": "9.1.0",
     "typescript": "5.3.3"
