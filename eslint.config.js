@@ -1,18 +1,11 @@
-"use strict";
+import mod from "@peggyjs/eslint-config/flat/module.js";
 
 export default [
   {
-    files: [
-      "**/*.js", 
+    ignores: [
+      "node_module/**",
+      "**/*.d.ts",
     ],
-    rules: {
-      "comma-dangle": ["error", {
-        arrays: "always-multiline",
-        objects: "always-multiline",
-        imports: "always-multiline",
-        exports: "always-multiline",
-        functions: "never",
-      }],
-    },
   },
+  mod,
 ];
