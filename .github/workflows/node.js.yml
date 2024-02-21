@@ -35,6 +35,6 @@ jobs:
         run: npm run ts
       - name: Test
         run: npm run coverage
-      - uses: codecov/codecov-action@v2
+      - uses: codecov/codecov-action@v4
         with:
           files: coverage/lcov.info
