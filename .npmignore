@@ -110,3 +110,5 @@ dist
 test/
 tsconfig.json
 .github/
+.editorconfig
+eslint.config.js
