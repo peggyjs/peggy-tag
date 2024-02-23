@@ -45,8 +45,8 @@ console.log(trace("123"));
 ## Notes:
 
 - This currently is only tested on Node 18+, no browser version yet.
-- `--experimental-vm-modules` is required for the async versions that
-  allow importing libraries.
+- Node 20.8+ and `--experimental-vm-modules` are required for the async
+  versions that allow importing libraries.
 - This is for NON-performance-sensitive code (e.g. prototypes), because the
   parser with be generated every time the template is evaluated.
 - If your parse function's variable name has exactly five letters (like

@@ -1,5 +1,6 @@
 import { default as peggy, withImports } from "../lib/index.js";
 import assert from "node:assert";
+import semver from "semver";
 import test from "node:test";
 
 // Don't syntax-highlight the intentionally-invalid code.
@@ -15,15 +16,15 @@ test("bad grammar", () => {
     () => bad`foo = "foo`,
     // The position of the dquote in the line above.  This will change
     // if the line above moves in the file.
-    /index-spec\.js:15:21\n   \|\n15 \| foo = "foo\n   \|       \^/
+    /index-spec\.js:16:21\n   \|\n16 \| foo = "foo\n   \|       \^/
   );
 });
 
 test("bad input", () => {
   const parser = peggy`foo = "foo"`;
   assert.throws(
-    () => parser("bar"), // This is line 25
-    /^25 \| bar/m
+    () => parser("bar"), // This is line 26
+    /^26 \| bar/m
   );
 });
 
@@ -41,7 +42,12 @@ test("with options", () => {
   assert(events.length > 0);
 });
 
-test("with library", async() => {
+test("with library", async t => {
+  if (!semver.satisfies(process.version, ">=20.8")) {
+    t.skip("Requires node 20.8+");
+    return;
+  }
+
   const parser = await withImports`
     import Foo from "./fixtures/foo.js"
     Bar = Foo`;
@@ -49,13 +55,23 @@ test("with library", async() => {
   assert.equal(parser("foo"), "foo");
 });
 
-test("with library, errors", async() => {
+test("with library, errors", async t => {
+  if (!semver.satisfies(process.version, ">=20.8")) {
+    t.skip("Requires node 20.8+");
+    return;
+  }
+
   await assert.rejects(() => withImports`
     import Boo from "./fixtures/foo.js"
     Bar = Foo`);
 });
 
-test("with library and options", async() => {
+test("with library and options", async t => {
+  if (!semver.satisfies(process.version, ">=20.8")) {
+    t.skip("Requires node 20.8+");
+    return;
+  }
+
   const peg = peggy.withImportsOptions({ trace: true });
   const parser = await peg`
     import Foo from "./fixtures/foo.js"
