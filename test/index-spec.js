@@ -1,5 +1,5 @@
+import { default as peggy, withImports } from "../lib/index.js";
 import assert from "node:assert";
-import peggy from "../lib/index.js";
 import test from "node:test";
 
 // Don't syntax-highlight the intentionally-invalid code.
@@ -22,8 +22,8 @@ test("bad grammar", () => {
 test("bad input", () => {
   const parser = peggy`foo = "foo"`;
   assert.throws(
-    () => parser("bar"),
-    /^1 \| bar/m
+    () => parser("bar"), // This is line 25
+    /^25 \| bar/m
   );
 });
 
@@ -32,6 +32,36 @@ test("with options", () => {
   const parser = peg`foo = "3"`;
   const events = [];
   parser("3", {
+    tracer: {
+      trace(ev) {
+        events.push(ev);
+      },
+    },
+  });
+  assert(events.length > 0);
+});
+
+test("with library", async() => {
+  const parser = await withImports`
+    import Foo from "./fixtures/foo.js"
+    Bar = Foo`;
+
+  assert.equal(parser("foo"), "foo");
+});
+
+test("with library, errors", async() => {
+  await assert.rejects(() => withImports`
+    import Boo from "./fixtures/foo.js"
+    Bar = Foo`);
+});
+
+test("with library and options", async() => {
+  const peg = peggy.withImportsOptions({ trace: true });
+  const parser = await peg`
+    import Foo from "./fixtures/foo.js"
+    Bar = Foo`;
+  const events = [];
+  parser("foo", {
     tracer: {
       trace(ev) {
         events.push(ev);
