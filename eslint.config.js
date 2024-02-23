@@ -16,6 +16,6 @@ export default [
     files: [
       "test/**",
     ],
-    modern,
+    ...modern,
   },
 ];
