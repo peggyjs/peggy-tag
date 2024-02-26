@@ -31,13 +31,13 @@
   },
   "homepage": "https://github.com/peggy/peggy-tag#readme",
   "dependencies": {
-    "@peggyjs/from-mem": "1.1.0",
+    "@peggyjs/from-mem": "1.2.1",
     "eslint": "^8.57.0",
-    "peggy": "4.0.1"
+    "peggy": "4.0.2"
   },
   "devDependencies": {
-    "@peggyjs/eslint-config": "3.2.3",
-    "@peggyjs/eslint-plugin": "2.0.1",
+    "@peggyjs/eslint-config": "3.2.4",
+    "@peggyjs/eslint-plugin": "2.0.2",
     "@types/node": "20.11.20",
     "c8": "9.1.0",
     "semver": "7.6.0",

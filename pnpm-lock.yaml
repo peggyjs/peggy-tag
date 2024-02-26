@@ -6,22 +6,22 @@ settings:
 
 dependencies:
   '@peggyjs/from-mem':
-    specifier: 1.1.0
-    version: 1.1.0
+    specifier: 1.2.1
+    version: 1.2.1
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
   peggy:
-    specifier: 4.0.1
-    version: 4.0.1
+    specifier: 4.0.2
+    version: 4.0.2
 
 devDependencies:
   '@peggyjs/eslint-config':
-    specifier: 3.2.3
-    version: 3.2.3(eslint@8.57.0)(typescript@5.3.3)
+    specifier: 3.2.4
+    version: 3.2.4(eslint@8.57.0)(typescript@5.3.3)
   '@peggyjs/eslint-plugin':
-    specifier: 2.0.1
-    version: 2.0.1(@peggyjs/eslint-parser@2.0.5)(eslint@8.57.0)
+    specifier: 2.0.2
+    version: 2.0.2(@peggyjs/eslint-parser@2.0.6)(eslint@8.57.0)
   '@types/node':
     specifier: 20.11.20
     version: 20.11.20
@@ -134,8 +134,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  /@peggyjs/eslint-config@3.2.3(eslint@8.57.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-NlYOPUHuR9lSmd8OimdrH+buCrtVILfsEun63ZmJqokpiVBE+Cpb2z9joIsS1LHGCZWsYQdr79xFbOstq0U/ew==}
+  /@peggyjs/eslint-config@3.2.4(eslint@8.57.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-Mj6F0U2Sf8Pc3c9HA3N+4GswSWf4yaeiRQV7AmdUZNLUzieDllMLf9QWzV/vSkjo/FiDa9Yu2DOTmiEdpxJ5nA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ~7
@@ -161,34 +161,27 @@ packages:
       - supports-color
     dev: true
 
-  /@peggyjs/eslint-parser@2.0.5:
-    resolution: {integrity: sha512-oOXcTVBGMlBmiKDz4Tp4Q7mEShOyUm6tivxtlBb/T5rBTU/VoyGuFIYbXP7D9szzPA9hjeXVcffDLW1oRC7LDA==}
+  /@peggyjs/eslint-parser@2.0.6:
+    resolution: {integrity: sha512-3nTz29Wo6kfe7OnVmCmlgOfEfRUT6PIJictENtLppSH3fJKOJnsR6L1tAw20JVo94Me4wWxnLaP0k8MyJpPP/Q==}
     engines: {node: '>=18'}
     dev: true
 
-  /@peggyjs/eslint-plugin@2.0.1(@peggyjs/eslint-parser@2.0.5)(eslint@8.57.0):
-    resolution: {integrity: sha512-6xF4pRD443wI0WrtlfNXnISVc0BtY/4Bxw6wIA57DTFwqvu+UomdUKeKtYhkjpCQgg+UG9oyTNWZDTwINGcI/g==}
+  /@peggyjs/eslint-plugin@2.0.2(@peggyjs/eslint-parser@2.0.6)(eslint@8.57.0):
+    resolution: {integrity: sha512-UsgfNY5JUe4bDE6yonabrOS9PFD8aSbITNKw5YOpvWUidE+Cq6MaA3NmKbWzx9L6pPy7415Wz8MndEBMLCsx2Q==}
     engines: {node: '>=20.8'}
     peerDependencies:
-      '@peggyjs/eslint-parser': ^2.0.5
+      '@peggyjs/eslint-parser': ^2.0.6
       eslint: '>=8.57.0'
     dependencies:
-      '@peggyjs/eslint-parser': 2.0.5
-      '@peggyjs/from-mem': 1.1.0
+      '@peggyjs/eslint-parser': 2.0.6
+      '@peggyjs/from-mem': 1.2.1
       enhanced-resolve: 5.15.0
       eslint: 8.57.0
     dev: true
 
-  /@peggyjs/from-mem@1.0.0:
-    resolution: {integrity: sha512-IagfcDvEzBJlNs2roRHQSZbDCXYRR64M/vy6l7AfXS54/YM5cBWwsUnYoB6PhJYFfrWmk5mBUyuEXEo6FDD8dw==}
-    engines: {node: '>=20.8'}
-    dependencies:
-      semver: 7.6.0
-    dev: false
-
-  /@peggyjs/from-mem@1.1.0:
-    resolution: {integrity: sha512-dnemsLNAWaf1eS2E6eh86QRTmco8ROTAIy/MTUG/0OZ6UPAnCzDbF7V0EYtiXwxMATubAXp3YTSvsnanQDgjzA==}
-    engines: {node: '>=20.8'}
+  /@peggyjs/from-mem@1.2.1:
+    resolution: {integrity: sha512-qh5zG8WKT36142/FqOYtpF0scRR3ZJ3H5XST1bJ/KV2FvyB5MvUB/tB9ZjihRe1iKjJD4PBOZczzwEx7hJtgMw==}
+    engines: {node: '>=18'}
     dependencies:
       semver: 7.6.0
 
@@ -955,12 +948,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /peggy@4.0.1:
-    resolution: {integrity: sha512-seE+fXQbIg/8fSmUFy/1gBaG4epQ0DyOSvd89OUxCuuYm18hUYubuIj/UhIZLTwIdn7lWUkXtxznYVQqsSw9Ig==}
+  /peggy@4.0.2:
+    resolution: {integrity: sha512-j4cepPgB20V7honmTAI+7U022y/n/wVi7Rbbd2QrMl2nifFECpngvA6Zhrz/JdmZ5LIBoTdkgHcDzzaA6C4ABg==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      '@peggyjs/from-mem': 1.0.0
+      '@peggyjs/from-mem': 1.2.1
       commander: 12.0.0
       source-map-generator: 0.8.0
     dev: false
