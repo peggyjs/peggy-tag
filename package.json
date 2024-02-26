@@ -1,6 +1,6 @@
 {
   "name": "peggy-tag",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tagged template strings for Peggy grammars",
   "main": "lib/index.js",
   "type": "module",
