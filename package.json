@@ -5,6 +5,10 @@
   "main": "lib/index.js",
   "type": "module",
   "types": "types/index.d.ts",
+  "files": [
+    "lib/",
+    "types/"
+  ],
   "scripts": {
     "test": "node --experimental-vm-modules --test test/*-spec.js",
     "coverage": "c8 npm test",
@@ -28,9 +32,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/peggy/peggy-tag/issues"
+    "url": "https://github.com/peggyjs/peggy-tag/issues"
   },
-  "homepage": "https://github.com/peggy/peggy-tag#readme",
+  "homepage": "https://github.com/peggyjs/peggy-tag#readme",
   "dependencies": {
     "@peggyjs/from-mem": "2.0.0",
     "eslint": "^9.26.0",
