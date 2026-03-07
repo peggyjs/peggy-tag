@@ -1,6 +1,5 @@
-import mod from "@peggyjs/eslint-config/flat/module.js";
-import modern from "@peggyjs/eslint-config/flat/modern.js";
-import peggyjs from "@peggyjs/eslint-plugin/lib/flat/recommended.js";
+import mod from "@peggyjs/eslint-config/module.js";
+import { modern } from "@peggyjs/eslint-config/modern.js";
 
 export default [
   {
@@ -10,8 +9,7 @@ export default [
       "test/fixtures/*.js",
     ],
   },
-  mod,
-  peggyjs,
+  ...mod,
   {
     files: [
       "test/**",
