@@ -9,7 +9,8 @@
     "test": "node --experimental-vm-modules --test test/*-spec.js",
     "coverage": "c8 npm test",
     "lint": "eslint .",
-    "ts": "tsc"
+    "ts": "tsc",
+    "build": "npm run ts && npm run lint && npm run coverage"
   },
   "repository": {
     "type": "git",
@@ -31,20 +32,19 @@
   },
   "homepage": "https://github.com/peggy/peggy-tag#readme",
   "dependencies": {
-    "@peggyjs/from-mem": "1.2.1",
-    "eslint": "^8.57.0",
-    "peggy": "4.0.2"
+    "@peggyjs/from-mem": "2.0.0",
+    "eslint": "^9.26.0",
+    "peggy": "5.0.0"
   },
   "devDependencies": {
-    "@peggyjs/eslint-config": "3.2.4",
-    "@peggyjs/eslint-plugin": "2.0.2",
-    "@types/node": "20.11.20",
-    "c8": "9.1.0",
-    "semver": "7.6.0",
-    "typescript": "5.3.3"
+    "@peggyjs/eslint-config": "6.0.0",
+    "@types/node": "22.15.3",
+    "semver": "7.7.1",
+    "superc8": "12.2.4",
+    "typescript": "5.8.3"
   },
-  "packageManager": "pnpm@8.15.3",
+  "packageManager": "pnpm@10.10.0",
   "engines": {
-    "node": ">=18.2.0"
+    "node": ">=20"
   }
 }
